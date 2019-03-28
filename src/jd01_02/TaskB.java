@@ -3,14 +3,13 @@ package jd01_02;
 import java.util.Scanner;
 
 public class TaskB {
-    Scanner g = new Scanner(System.in);
 
     public static void main(String[] args) {
         Scanner cin = new Scanner(System.in);
-//        step1();
-//        System.out.println("Vvedite nomer mesyaca\n");
-//        int h = cin.nextInt();
-//        step2(h);
+        step1();
+        System.out.println("Vvedite nomer mesyaca\n");
+        int h = cin.nextInt();
+        step2(h);
         System.out.println("Vvedite chisla kvadratnogo yravneniya");
         double a = cin.nextInt();
         double b = cin.nextInt();
@@ -98,13 +97,14 @@ public class TaskB {
         double x1;
         double x2;
         double discriminant = (b * b - 4 * a * c);
-        double koren = Math.sqrt(discriminant);
-        if (koren < 0) {
+        if (discriminant<0)
             System.out.println("корней нет");
-        } else {
+        else
+        {
+            double koren = Math.sqrt(discriminant);
             x1 = (b * (-1) + koren) / (2 * a);
             x2 = (b * (-1) - koren) / (2 * a);
-            System.out.println("Первый корень равен " + x1 + "Второй корень равен " + x2);
+            System.out.println("Первый корень равен " + x1 + " Второй корень равен " + x2);
         }
     }
 }
