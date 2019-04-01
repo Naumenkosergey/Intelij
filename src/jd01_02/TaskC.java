@@ -8,7 +8,7 @@ public class TaskC {
         Scanner cin = new Scanner(System.in);
         int n = cin.nextInt();
         step1(n);
-//        System.out.println(step1(n));
+        System.out.println(step1(n));
 
 
     }
