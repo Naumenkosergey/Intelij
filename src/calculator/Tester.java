@@ -8,7 +8,7 @@ public class Tester {
         System.out.println(b);
         Vector c = new Vector("{1,2,3}");
         System.out.println(c);*/
-        Matrix m = new Matrix("{1, 2, 3},{2, 3, 5}");
+        Matrix m = new Matrix("{{1, 2, 3, 2, 3},{2, 3, 5, 2, 3},{2, 3, 5, 2, 3},{2, 3, 5, 2, 3},{2, 3, 5, 2, 3},{2, 3, 5, 2, 3}}");
         System.out.println(m);
         /*int[][] mat = new int[5][5];
         for (int[] i:mat

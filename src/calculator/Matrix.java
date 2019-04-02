@@ -35,9 +35,9 @@ public class Matrix {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder("{");
-        String razdelitel2 = "";
         for (int i = 0; i < this.mat.length; i++) {
             stringBuilder.append("{");
+            String razdelitel2 = "";
             for (int j = 0; j < mat[i].length; j++) {
                 stringBuilder.append(razdelitel2).append(this.mat[i][j]);
                 razdelitel2 = ",";
