@@ -8,5 +8,14 @@ public class Tester {
         System.out.println(b);
         Vector c = new Vector("{1,2,3}");
         System.out.println(c);
+        /*int[][] mat = new int[5][5];
+        for (int[] i:mat
+             ) {
+            for (int j:i
+                 ) {
+                System.out.print(mat);
+            }
+            System.out.println();
+        }*/
     }
 }

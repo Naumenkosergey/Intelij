@@ -12,7 +12,7 @@ public class Matrix {
     public Matrix(Matrix mat) {
         this.mat = mat.mat;
     }
-    public Matrix(String mat) {
+    /*public Matrix(String mat) {
         mat = mat.replaceAll("[}{]", "");
         String[][] mat1 = mat.split(",\\s*");
         double[][] mat2 = new double[mat1.length][mat1.length];
@@ -22,7 +22,7 @@ public class Matrix {
             }
         }
         this.mat = mat2;
-    }
+    }*/
 
     @Override
     public String toString() {
