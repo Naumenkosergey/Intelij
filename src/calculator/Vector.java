@@ -26,8 +26,8 @@ public class Vector {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder("{");
-        String razdelitel ="";
-        for (int i = 0; i <this.mas.length; i++) {
+        String razdelitel = "";
+        for (int i = 0; i < this.mas.length; i++) {
             stringBuilder.append(razdelitel).append(this.mas[i]);
             razdelitel = ",";
         }
