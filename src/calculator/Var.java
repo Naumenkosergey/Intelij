@@ -1,5 +1,5 @@
 package calculator;
 
-public class Var {
+public class Var {b
 
 }
