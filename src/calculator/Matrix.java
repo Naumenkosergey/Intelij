@@ -2,7 +2,7 @@ package calculator;
 
 import java.util.Arrays;
 
-public class Matrix {
+public class Matrix extends Var {
     double[][] mat;
 
     public Matrix(double[][] mat) {

@@ -2,7 +2,7 @@ package calculator;
 
 import java.util.Arrays;
 
-public class Vector {
+public class Vector extends Var {
     double[] mas;
 
     public Vector(double[] mas) {
@@ -29,7 +29,7 @@ public class Vector {
         String razdelitel = "";
         for (int i = 0; i < this.mas.length; i++) {
             stringBuilder.append(razdelitel).append(this.mas[i]);
-            razdelitel = ",";
+            razdelitel = ", ";
         }
         stringBuilder.append("}");
         return stringBuilder.toString();
