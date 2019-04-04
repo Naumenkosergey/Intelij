@@ -1,8 +1,6 @@
 package calculator;
 
-import java.util.Arrays;
-
-public class Vector extends Var {
+public class Vector extends Variable {
     double[] mas;
 
     public Vector(double[] mas) {

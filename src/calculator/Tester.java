@@ -2,10 +2,10 @@ package calculator;
 
 public class Tester {
     public static void main(String[] args) {
-        Vector a = new Vector(new double[]{5,6,9});
+        Vector a = new Vector(new double[]{5, 6, 9});
         System.out.println(a);
-//        Vector b = new Vector(a);
-//        System.out.println(b);
+        Vector b = new Vector(a);
+        System.out.println(b);
         Vector c = new Vector("{1.0, 2.0, 4.0}");
         System.out.println(c);
         Matrix m = new Matrix("{{1, 2, 3, 2, 3},{2, 3, 5, 2, 3},{2, 3, 5, 2, 3},{2, 3, 5, 2, 3},{2, 3, 5, 2, 3},{2, 3, 5, 2, 3}}");
@@ -19,5 +19,9 @@ public class Tester {
             }
             System.out.println();
         }*/
+      /*  Integer b = new Integer(2);
+        Integer f = new Integer(2);
+        System.out.println(b==f);
+        System.out.println(b.equals(f));*/
     }
 }

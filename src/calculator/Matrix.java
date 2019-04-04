@@ -1,8 +1,6 @@
 package calculator;
 
-import java.util.Arrays;
-
-public class Matrix extends Var {
+public class Matrix extends Variable {
     double[][] mat;
 
     public Matrix(double[][] mat) {

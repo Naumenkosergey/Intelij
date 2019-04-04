@@ -1,6 +1,6 @@
 package calculator;
 
-public class Scalar extends Var {
+public class Scalar extends Variable {
     double b;
 
     @Override
