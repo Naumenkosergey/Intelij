@@ -10,6 +10,10 @@ public class Tester {
         System.out.println(c);
         Matrix m = new Matrix("{{1, 2, 3, 2, 3},{2, 3, 5, 2, 3},{2, 3, 5, 2, 3},{2, 3, 5, 2, 3},{2, 3, 5, 2, 3},{2, 3, 5, 2, 3}}");
         System.out.println(m);
+        Scalar g = new Scalar(5);
+        System.out.println(g.delenie(c));
+        System.out.println(c.delenie(c));
+//        System.out.println();
         /*int[][] mat = new int[5][5];
         for (int[] i:mat
              ) {

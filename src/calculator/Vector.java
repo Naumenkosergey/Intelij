@@ -32,4 +32,100 @@ public class Vector extends Variable {
         stringBuilder.append("}");
         return stringBuilder.toString();
     }
+
+    @Override
+    public Variable slogenie(Variable other) {
+        if (other instanceof Vector) {
+            Vector vector = (Vector) other;
+            double[] result = new double[this.mas.length];
+            for (int i = 0; i < this.mas.length; i++) {
+
+                result[i] = this.mas[i] + vector.mas[i];
+
+            }
+            return new Vector(result);
+
+        }
+        if (other instanceof Scalar) {
+            Scalar scalar = (Scalar) other;
+            double[] result = new double[this.mas.length];
+            for (int i = 0; i < this.mas.length; i++) {
+
+                result[i] = this.mas[i] + scalar.b;
+
+            }
+            return new Vector(result);
+        }
+        return other.slogenie(this);
+    }
+
+    @Override
+    public Variable vichitanie(Variable other) {
+        if (other instanceof Vector) {
+            Vector vector = (Vector) other;
+            double[] result = new double[this.mas.length];
+            for (int i = 0; i < this.mas.length; i++) {
+
+                result[i] = this.mas[i] - vector.mas[i];
+
+            }
+            return new Vector(result);
+
+        }
+        if (other instanceof Scalar) {
+            Scalar scalar = (Scalar) other;
+            double[] result = new double[this.mas.length];
+            for (int i = 0; i < this.mas.length; i++) {
+
+                result[i] = this.mas[i] - scalar.b;
+
+            }
+            return new Vector(result);
+        }
+        return super.vichitanie(other);
+    }
+
+    @Override
+    public Variable umnogenie(Variable other) {
+        if (other instanceof Scalar) {
+            Scalar scalar = (Scalar) other;
+            double[] result = new double[this.mas.length];
+            for (int i = 0; i < this.mas.length; i++) {
+
+                result[i] = this.mas[i] * scalar.b;
+
+            }
+            return new Vector(result);
+
+        }
+        if (other instanceof Vector) {
+            Vector vector = (Vector) other;
+            double result = 0;
+            for (int i = 0; i < this.mas.length; i++) {
+
+                result += this.mas[i] * vector.mas[i];
+
+            }
+            return new Scalar(result);
+
+        }
+        return super.umnogenie(other);
+    }
+
+    @Override
+    public Variable delenie(Variable other) {
+
+        if (other instanceof Scalar) {
+            Scalar scalar = (Scalar) other;
+            double[] result = new double[this.mas.length];
+            for (int i = 0; i < this.mas.length; i++) {
+
+                result[i] = this.mas[i] / scalar.b;
+
+            }
+            return new Vector(result);
+
+        }
+        return super.delenie(other);
+    }
 }
