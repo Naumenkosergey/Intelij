@@ -13,7 +13,7 @@ public class Tester {
         Scalar g = new Scalar(5);
         System.out.println(g.delenie(c));
         System.out.println(c.delenie(c));
-//        System.out.println();
+        System.out.println();
         /*int[][] mat = new int[5][5];
         for (int[] i:mat
              ) {
@@ -22,8 +22,8 @@ public class Tester {
                 System.out.print(mat);
             }
             System.out.println();
-        }*/
-      /*  Integer b = new Integer(2);
+        }
+        Integer b = new Integer(2);
         Integer f = new Integer(2);
         System.out.println(b==f);
         System.out.println(b.equals(f));*/
