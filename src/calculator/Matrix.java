@@ -19,7 +19,7 @@ public class Matrix extends Variable {
         int kolvoStb = matstb.length;
         int kolvoStr = mat1.length;
         String[] mat3 = mat.split("\\s+");
-        int k=0;
+        int k = 0;
         double[][] mat2 = new double[kolvoStr][kolvoStb];
         for (int i = 0; i < mat2.length; i++) {
             for (int j = 0; j < mat2[i].length; j++) {
@@ -40,7 +40,7 @@ public class Matrix extends Variable {
                 stringBuilder.append(razdelitel2).append(this.mat[i][j]);
                 razdelitel2 = ",";
             }
-            if (i!=this.mat.length-1)
+            if (i != this.mat.length - 1)
                 stringBuilder.append("},");
         }
         stringBuilder.append("}}");
@@ -53,7 +53,7 @@ public class Matrix extends Variable {
             Matrix matrix = (Matrix) other;
             double[][] result = new double[this.mat.length][this.mat[0].length];
             for (int i = 0; i < this.mat.length; i++) {
-                for (int j = 0; j <this.mat[i].length; j++) {
+                for (int j = 0; j < this.mat[i].length; j++) {
 
                     result[i][j] = this.mat[i][j] + matrix.mat[i][j];
 
@@ -66,7 +66,7 @@ public class Matrix extends Variable {
             Scalar scalar = (Scalar) other;
             double[][] result = new double[this.mat.length][this.mat[0].length];
             for (int i = 0; i < this.mat.length; i++) {
-                for (int j = 0; j <this.mat[j].length; j++) {
+                for (int j = 0; j < this.mat[j].length; j++) {
                     result[i][j] = this.mat[i][j] + scalar.b;
                 }
 
@@ -82,7 +82,7 @@ public class Matrix extends Variable {
             Matrix matrix = (Matrix) other;
             double[][] result = new double[this.mat.length][this.mat[0].length];
             for (int i = 0; i < this.mat.length; i++) {
-                for (int j = 0; j <this.mat[i].length; j++) {
+                for (int j = 0; j < this.mat[i].length; j++) {
 
                     result[i][j] = this.mat[i][j] - matrix.mat[i][j];
 
@@ -95,7 +95,7 @@ public class Matrix extends Variable {
             Scalar scalar = (Scalar) other;
             double[][] result = new double[this.mat.length][this.mat[0].length];
             for (int i = 0; i < this.mat.length; i++) {
-                for (int j = 0; j <this.mat[j].length; j++) {
+                for (int j = 0; j < this.mat[j].length; j++) {
                     result[i][j] = this.mat[i][j] - scalar.b;
                 }
 
@@ -107,11 +107,59 @@ public class Matrix extends Variable {
 
     @Override
     public Variable umnogenie(Variable other) {
-        return super.umnogenie(other);
+        if (other instanceof Vector) {
+            Vector vector = (Vector) other;
+            double[] result = new double[this.mat.length];
+            for (int i = 0; i < this.mat.length; i++) {
+                for (int j = 0; j < this.mat[i].length; j++) {
+                    result[i] = result[i] + this.mat[i][j] * vector.mas[j];
+                }
+            }
+            return new Vector(result);
+        }
+
+        if (other instanceof Scalar) {
+            Scalar scalar = (Scalar) other;
+            double[][] result = new double[this.mat.length][this.mat[0].length];
+            for (int i = 0; i < this.mat.length; i++) {
+                for (int j = 0; j < this.mat[j].length; j++) {
+                    result[i][j] = this.mat[i][j] * scalar.b;
+                }
+
+            }
+            return new Matrix(result);
+        }
+        if (other instanceof Matrix){
+            Matrix matrix = (Matrix) other;
+            double [][] result = new double[this.mat.length][matrix.mat[0].length];
+            for (int i = 0; i <mat.length; i++) {
+                for (int j = 0; j <matrix.mat[0].length; j++) {
+                    for (int k = 0; k <matrix.mat.length; k++) {
+                        result[i][j]+=this.mat[i][k]*matrix.mat[k][j];
+                    }
+
+                }
+
+            }
+            return new Matrix(result);
+        }
+        return this.umnogenie(this);
     }
 
     @Override
     public Variable delenie(Variable other) {
-        return super.delenie(other);
+
+        if (other instanceof Scalar) {
+            Scalar scalar = (Scalar) other;
+            double[][] result = new double[this.mat.length][this.mat[0].length];
+            for (int i = 0; i < this.mat.length; i++) {
+                for (int j = 0; j < this.mat[j].length; j++) {
+                    result[i][j] = this.mat[i][j] / scalar.b;
+                }
+
+            }
+            return new Matrix(result);
+        }
+        return other.delenie(this);
     }
 }
