@@ -46,4 +46,72 @@ public class Matrix extends Variable {
         stringBuilder.append("}}");
         return stringBuilder.toString();
     }
+
+    @Override
+    public Variable slogenie(Variable other) {
+        if (other instanceof Matrix) {
+            Matrix matrix = (Matrix) other;
+            double[][] result = new double[this.mat.length][this.mat[0].length];
+            for (int i = 0; i < this.mat.length; i++) {
+                for (int j = 0; j <this.mat[i].length; j++) {
+
+                    result[i][j] = this.mat[i][j] + matrix.mat[i][j];
+
+                }
+            }
+            return new Matrix(result);
+
+        }
+        if (other instanceof Scalar) {
+            Scalar scalar = (Scalar) other;
+            double[][] result = new double[this.mat.length][this.mat[0].length];
+            for (int i = 0; i < this.mat.length; i++) {
+                for (int j = 0; j <this.mat[j].length; j++) {
+                    result[i][j] = this.mat[i][j] + scalar.b;
+                }
+
+            }
+            return new Matrix(result);
+        }
+        return other.slogenie(this);
+    }
+
+    @Override
+    public Variable vichitanie(Variable other) {
+        if (other instanceof Matrix) {
+            Matrix matrix = (Matrix) other;
+            double[][] result = new double[this.mat.length][this.mat[0].length];
+            for (int i = 0; i < this.mat.length; i++) {
+                for (int j = 0; j <this.mat[i].length; j++) {
+
+                    result[i][j] = this.mat[i][j] - matrix.mat[i][j];
+
+                }
+            }
+            return new Matrix(result);
+
+        }
+        if (other instanceof Scalar) {
+            Scalar scalar = (Scalar) other;
+            double[][] result = new double[this.mat.length][this.mat[0].length];
+            for (int i = 0; i < this.mat.length; i++) {
+                for (int j = 0; j <this.mat[j].length; j++) {
+                    result[i][j] = this.mat[i][j] - scalar.b;
+                }
+
+            }
+            return new Matrix(result);
+        }
+        return other.vichitanie(this);
+    }
+
+    @Override
+    public Variable umnogenie(Variable other) {
+        return super.umnogenie(other);
+    }
+
+    @Override
+    public Variable delenie(Variable other) {
+        return super.delenie(other);
+    }
 }
