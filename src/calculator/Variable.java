@@ -27,4 +27,16 @@ public abstract class Variable implements IOperation {
         System.out.println("Деление " + this + " / " + other + " невозможно");
         return null;
     }
+
+    public static Variable createVar(String apparand) {
+        if (apparand.matches(Patterns.SCALAR))
+            return new Scalar(apparand);
+        if (apparand.matches(Patterns.VECTOR))
+            return new Vector(apparand);
+        if (apparand.matches(Patterns.MATRIX))
+            return new Matrix(apparand);
+
+
+        return null;
+    }
 }
