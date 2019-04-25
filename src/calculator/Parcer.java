@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Parcer {
-    public Variable calculator(String string) {
+    public Variable calculator(String string) throws Exceptions {
         String[] apparands = string.split(Patterns.OPERATIONS);
         Variable one = Variable.createVar(apparands[0]);
         Variable two = Variable.createVar(apparands[1]);

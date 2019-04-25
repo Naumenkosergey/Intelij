@@ -1,9 +1,9 @@
 package calculator;
 
 public interface IOperation {
-    public Variable slogenie(Variable other);
-    public Variable vichitanie(Variable other);
-    public Variable umnogenie(Variable other);
-    public Variable delenie(Variable other);
+    public Variable slogenie(Variable other) throws Exceptions;
+    public Variable vichitanie(Variable other) throws Exceptions ;
+    public Variable umnogenie(Variable other) throws Exceptions;
+    public Variable delenie(Variable other) throws Exceptions;
 }
 

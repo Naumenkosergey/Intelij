@@ -34,7 +34,7 @@ public class Vector extends Variable {
     }
 
     @Override
-    public Variable slogenie(Variable other) {
+    public Variable slogenie(Variable other) throws Exceptions {
         if (other instanceof Vector) {
             Vector vector = (Vector) other;
             double[] result = new double[this.mas.length];
@@ -60,7 +60,7 @@ public class Vector extends Variable {
     }
 
     @Override
-    public Variable vichitanie(Variable other) {
+    public Variable vichitanie(Variable other) throws Exceptions {
         if (other instanceof Vector) {
             Vector vector = (Vector) other;
             double[] result = new double[this.mas.length];
@@ -86,7 +86,7 @@ public class Vector extends Variable {
     }
 
     @Override
-    public Variable umnogenie(Variable other) {
+    public Variable umnogenie(Variable other) throws Exceptions {
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double[] result = new double[this.mas.length];
@@ -113,7 +113,7 @@ public class Vector extends Variable {
     }
 
     @Override
-    public Variable delenie(Variable other) {
+    public Variable delenie(Variable other) throws Exceptions {
 
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;

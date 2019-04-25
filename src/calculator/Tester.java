@@ -8,7 +8,7 @@ public class Tester {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exceptions {
         System.out.println("Введите пример");
         Scanner cin = new Scanner(System.in);
         Parcer parcer = new Parcer();
