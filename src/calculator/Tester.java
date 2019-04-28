@@ -3,7 +3,7 @@ package calculator;
 import java.util.Scanner;
 
 public class Tester {
-    public static void print(Variable other) {
+    public static void print(String other) {
         System.out.println(other);
 
     }
@@ -13,10 +13,15 @@ public class Tester {
         Scanner cin = new Scanner(System.in);
         Parcer parcer = new Parcer();
         String input;
-        while (!(input=cin.next()).equals("stop")){
-            Variable result = parcer.calculator(input);
-            print(result);
 
+        while (!(input = cin.next()).equals("stop")) {
+            try {
+                String result = parcer.calculator(input);
+                print(result);
+
+            } catch (Exceptions exceptions) {
+                System.out.println(exceptions.getMessage());
+            }
         }
 
 
